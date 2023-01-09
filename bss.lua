@@ -2193,6 +2193,8 @@ guiElements["toggles"]["clock"] = farmt:CreateToggle("Auto Wealth Clock", nil, f
  farmt:CreateToggle("Auto Honey Candles", nil, function(State) kocmoc.toggles.autocandles = State end)
  farmt:CreateToggle("Auto Beesmas Feast", nil, function(State) kocmoc.toggles.autofeast = State end)
  farmt:CreateToggle("Auto Onett's Lid Art", nil, function(State) kocmoc.toggles.autoonettart = State end)
+ farmt:CreateToggle("Auto Honey Wreath", nil, function(State) kocmoc.toggles.autowreath = State end)
+ farmt:CreateToggle("Auto Snow Machine", nil, function(State) kocmoc.toggles.autosnowmachines = State end)
 guiElements["toggles"]["freeantpass"] = farmt:CreateToggle("Auto Free Antpasses", nil, function(State) kocmoc.toggles.freeantpass = State end)
 guiElements["toggles"]["farmsprouts"] = farmt:CreateToggle("Farm Sprouts", nil, function(State) kocmoc.toggles.farmsprouts = State end)
 guiElements["toggles"]["farmpuffshrooms"] = farmt:CreateToggle("Farm Puffshrooms", nil, function(State) kocmoc.toggles.farmpuffshrooms = State end)
@@ -3856,6 +3858,9 @@ task.spawn(function()
                     end
                 end
             end
+            if kocmoc.toggles.autosnowmachines then
+                game:GetService("ReplicatedStorage").Events.ToyEvent:FireServer("Snow Machine")
+            end
             if kocmoc.toggles.autostockings then
                 game:GetService("ReplicatedStorage").Events.ToyEvent:FireServer("Stockings")
                 platformm = game.Workspace.Toys.Stockings.Platform
@@ -3863,6 +3868,15 @@ task.spawn(function()
                     if (v.Position - platformm.Position).magnitude < 25 and
                         v.CFrame.YVector.Y == 1 then
                         api.humanoidrootpart().CFrame = v.CFrame
+                    end
+                end
+            end
+            if kocmoc.toggles.autowreath then
+            game:GetService("ReplicatedStorage").Events.ToyEvent:FireServer("Honey Wreath")
+            platformm = game:GetService("Workspace").Toys["Honey Wreath"].Platform
+            for i,v in pairs(game.Workspace.Collectibles:GetChildren()) do
+                if (v.Position-platformm.Position).magnitude < 25 and v.CFrame.YVector.Y == 1 then
+                    api.humanoidrootpart().CFrame = v.CFrame
                     end
                 end
             end
