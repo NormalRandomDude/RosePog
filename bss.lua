@@ -416,6 +416,8 @@ getgenv().kocmoc = {
         autoonettart = false,
         autocandles = false,
         autofeast = false,
+        autowreath = false,
+        autosnowmachines = false,
         autoplanters = false,
         autokillmobs = false,
         autoant = false,
@@ -2187,18 +2189,18 @@ local farmt = farmtab:CreateSection("Farming")
 guiElements["toggles"]["autodispense"] = farmt:CreateToggle("Auto Dispenser [⚙]", nil, function(State) kocmoc.toggles.autodispense = State end)
 guiElements["toggles"]["autoboosters"] = farmt:CreateToggle("Auto Field Boosters [⚙]", nil, function(State) kocmoc.toggles.autoboosters = State end)
 guiElements["toggles"]["clock"] = farmt:CreateToggle("Auto Wealth Clock", nil, function(State) kocmoc.toggles.clock = State end)
- farmt:CreateToggle("Auto Gingerbread Bears", nil, function(State) kocmoc.toggles.collectgingerbreads = State end)
- farmt:CreateToggle("Auto Samovar", nil, function(State) kocmoc.toggles.autosamovar = State end)
- farmt:CreateToggle("Auto Stockings", nil, function(State) kocmoc.toggles.autostockings = State end)
- farmt:CreateToggle("Auto Honey Candles", nil, function(State) kocmoc.toggles.autocandles = State end)
- farmt:CreateToggle("Auto Beesmas Feast", nil, function(State) kocmoc.toggles.autofeast = State end)
- farmt:CreateToggle("Auto Onett's Lid Art", nil, function(State) kocmoc.toggles.autoonettart = State end)
- farmt:CreateToggle("Auto Honey Wreath", nil, function(State) kocmoc.toggles.autowreath = State end)
- farmt:CreateToggle("Auto Snow Machine", nil, function(State) kocmoc.toggles.autosnowmachines = State end)
+ guiElements["toggles"]["collectgingerbreads"] = farmt:CreateToggle("Auto Gingerbread Bears", nil, function(State) kocmoc.toggles.collectgingerbreads = State end)
+ guiElements["toggles"]["autosamovar"] =  farmt:CreateToggle("Auto Samovar", nil, function(State) kocmoc.toggles.autosamovar = State end)
+ guiElements["toggles"]["autostockings"] =  farmt:CreateToggle("Auto Stockings", nil, function(State) kocmoc.toggles.autostockings = State end)
+ guiElements["toggles"]["autocandles"] =  farmt:CreateToggle("Auto Honey Candles", nil, function(State) kocmoc.toggles.autocandles = State end)
+ guiElements["toggles"]["autofeast"] =  farmt:CreateToggle("Auto Beesmas Feast", nil, function(State) kocmoc.toggles.autofeast = State end)
+ guiElements["toggles"]["autoonettart"] =  farmt:CreateToggle("Auto Onett's Lid Art", nil, function(State) kocmoc.toggles.autoonettart = State end)
+ guiElements["toggles"]["autowreath"] =  farmt:CreateToggle("Auto Honey Wreath", nil, function(State) kocmoc.toggles.autowreath = State end)
+ guiElements["toggles"]["autosnowmachines"] =  farmt:CreateToggle("Auto Snow Machine", nil, function(State) kocmoc.toggles.autosnowmachines = State end)
 guiElements["toggles"]["freeantpass"] = farmt:CreateToggle("Auto Free Antpasses", nil, function(State) kocmoc.toggles.freeantpass = State end)
 guiElements["toggles"]["farmsprouts"] = farmt:CreateToggle("Farm Sprouts", nil, function(State) kocmoc.toggles.farmsprouts = State end)
 guiElements["toggles"]["farmpuffshrooms"] = farmt:CreateToggle("Farm Puffshrooms", nil, function(State) kocmoc.toggles.farmpuffshrooms = State end)
- farmt:CreateToggle("Farm Snowflakes ["..Danger.."]", nil, function(State) kocmoc.toggles.farmsnowflakes = State end)
+ guiElements["toggles"]["farmsnowflakes"] = farmt:CreateToggle("Farm Snowflakes ["..Danger.."]", nil, function(State) kocmoc.toggles.farmsnowflakes = State end)
 guiElements["toggles"]["farmrares"] = farmt:CreateToggle("Teleport To Rares ["..Danger.."]", nil, function(State) kocmoc.toggles.farmrares = State end)
 guiElements["toggles"]["autoquest"] = farmt:CreateToggle("Auto Accept/Confirm Quests [⚙]", nil, function(State) kocmoc.toggles.autoquest = State end)
 guiElements["toggles"]["autodoquest"] = farmt:CreateToggle("Auto Do Quests [⚙]", nil, function(State) kocmoc.toggles.autodoquest = State end)
